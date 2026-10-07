@@ -10,268 +10,194 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
-:root {  --navy: #002c5f;  --navy-2: #0a3d7d;  --ink: #14202e;  --muted: #5d6b7c;  --line: #d9e0e9;  --bg: #eef2f7;  --card: #fff;  --tint: #e6eef9;  --red: #d3202f;  --wa: #25d366;  --radius: 16px;}
-* {  box-sizing: border-box;}
-html {  -webkit-text-size-adjust: 100%;}
-body {  margin: 0;  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;  background: var(--bg);  color: var(--ink);  line-height: 1.5;  padding-bottom: env(safe-area-inset-bottom);}
-header {  position: sticky;  top: 0;  z-index: 5;  background: var(--card);  border-bottom: 1px solid var(--line);  padding: calc(8px + env(safe-area-inset-top)) 16px 8px;  display: flex;  align-items: center;  justify-content: space-between;}
-header img {  height: 40px;  width: auto;  display: block;}
-.hero {  background: var(--navy);  color: #fff;  padding: 28px 20px 64px;  text-align: center;}
-.hero h1 {  margin: 0 auto;  max-width: 560px;  font-size: 1.65rem;  line-height: 1.2;  font-weight: 800;  letter-spacing: -.01em;}
-.hero h1 em {  font-style: normal;  color: #ff7a85;}
-.hero p {  margin: 8px auto 0;  max-width: 560px;  color: #c9d6e8;  font-size: .95rem;}
-main {  max-width: 560px;  margin: -40px auto 0;  padding: 0 14px 40px;}
-.card {  background: var(--card);  border-radius: var(--radius);  padding: 18px;  margin-bottom: 12px;  box-shadow:    0 1px 2px rgba(0,44,95,.06),    0 6px 20px rgba(0,44,95,.06);}
-.card h2 {  margin: 0 0 4px;  font-size: 1.02rem;  font-weight: 800;  color: var(--navy);}
-.hint {  margin: 0 0 12px;  font-size: .83rem;  color: var(--muted);}
-label.f {  display: block;  font-size: .8rem;  font-weight: 600;  color: var(--muted);  margin: 12px 0 4px;}
-label.f:first-of-type {  margin-top: 4px;}
-input,select,textarea {  width: 100%;  font: inherit;  font-size: 1rem;  color: var(--ink);  background: #fff;  border: 1.5px solid var(--line);  border-radius: 12px;  padding: 12px 14px;  min-height: 48px;  appearance: none;  -webkit-appearance: none;  transition: border-color .15s, box-shadow .15s;}
+:root {--navy: #002c5f;--navy-2: #0a3d7d;--ink: #14202e;--muted: #5d6b7c;--line: #d9e0e9;--bg: #eef2f7;--card: #fff;--tint: #e6eef9;--red: #d3202f;--wa: #25d366;--radius: 16px;}
+* {box-sizing: border-box;}
+html {-webkit-text-size-adjust: 100%;}
+body {margin: 0;font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;background: var(--bg);color: var(--ink);line-height: 1.5;padding-bottom: env(safe-area-inset-bottom);}
+header {position: sticky;top: 0;z-index: 5;background: var(--card);border-bottom: 1px solid var(--line);padding: calc(8px + env(safe-area-inset-top)) 16px 8px;display: flex;align-items: center;justify-content: space-between;}
+header img {height: 40px;width: auto;display: block;}
+.hero {background: var(--navy);color: #fff;padding: 28px 20px 64px;text-align: center;}
+.hero h1 {margin: 0 auto;max-width: 560px;font-size: 1.65rem;line-height: 1.2;font-weight: 800;letter-spacing: -.01em;}
+.hero h1 em {font-style: normal;color: #ff7a85;}
+.hero p {margin: 8px auto 0;max-width: 560px;color: #c9d6e8;font-size: .95rem;}
+main {max-width: 560px;margin: -40px auto 0;padding: 0 14px 40px;}
+.card {background: var(--card);border-radius: var(--radius);padding: 18px;margin-bottom: 12px;box-shadow:0 1px 2px rgba(0,44,95,.06),0 6px 20px rgba(0,44,95,.06);}
+.card h2 {margin: 0 0 4px;font-size: 1.02rem;font-weight: 800;color: var(--navy);}
+.hint {margin: 0 0 12px;font-size: .83rem;color: var(--muted);}
+label.f {display: block;font-size: .8rem;font-weight: 600;color: var(--muted);margin: 12px 0 4px;}
+label.f:first-of-type {margin-top: 4px;}
+input,select,textarea {width: 100%;font: inherit;font-size: 1rem;color: var(--ink);background: #fff;border: 1.5px solid var(--line);border-radius: 12px;padding: 12px 14px;min-height: 48px;appearance: none;-webkit-appearance: none;transition: border-color .15s, box-shadow .15s;}
 select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%235d6b7c' stroke-width='2'%3E%3Cpath d='m1 1 5 5 5-5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 38px;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%235d6b7c' stroke-width='2'%3E%3Cpath d='m1 1 5 5 5-5'/%3E%3C/svg%3E");
+background-repeat: no-repeat;background-position: right 14px center;padding-right: 38px;}
+textarea {resize: vertical;min-height: 96px;}
+input::placeholder,textarea::placeholder {color: #9aa6b5;}
+input:focus,select:focus,textarea:focus {outline: none;border-color: var(--navy-2);box-shadow: 0 0 0 3px rgba(10,61,125,.18);}
+.invalid {border-color: var(--red) !important;}
+.err {display: none;color: var(--red);font-size: .8rem;margin-top: 4px;}
+.err.show {display: block;}
+.opts {display: grid;gap: 8px;}
+.opt {font: inherit;font-weight: 600;text-align: left;background: #fff;
+color: var(--ink);
+border: 1.5px solid var(--line);
+border-radius: 12px;
+padding: 13px 14px;
+min-height: 48px;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 10px;
+transition: background .15s, border-color .15s, color .15s;
 }
-textarea {  resize: vertical;  min-height: 96px;}
-input::placeholder,textarea::placeholder {  color: #9aa6b5;}
-input:focus,select:focus,textarea:focus {  outline: none;  border-color: var(--navy-2);  box-shadow: 0 0 0 3px rgba(10,61,125,.18);}
-.invalid {  border-color: var(--red) !important;}
-.err {  display: none;  color: var(--red);  font-size: .8rem;  margin-top: 4px;}
-.err.show {  display: block;}
-.opts {  display: grid;  gap: 8px;}
-.opt {  font: inherit;  font-weight: 600;  text-align: left;  background: #fff;
-  color: var(--ink);
-  border: 1.5px solid var(--line);
-  border-radius: 12px;
-  padding: 13px 14px;
-  min-height: 48px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: background .15s, border-color .15s, color .15s;
-}
-
-.opt::before {
-  content: "";
-  flex: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid #b4c0cf;
-}
-
-.opt.multi::before {
-  border-radius: 5px;
-}
-
-.opt[aria-pressed="true"] {
-  background: var(--tint);
-  border-color: var(--navy-2);
-  color: var(--navy);
-}
-
-.opt[aria-pressed="true"]::before {
-  background: var(--navy-2);
-  border-color: var(--navy-2);
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.opt.multi[aria-pressed="true"]::before {
-  box-shadow: none;
-  background:
-    var(--navy-2)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='m2.5 6.5 2.5 2.5 4.5-5.5'/%3E%3C/svg%3E")
-    center/12px no-repeat;
-}
-
-.opt:focus-visible,
-.n:focus-visible,
-.btn:focus-visible {
-  outline: 3px solid rgba(10,61,125,.4);
-  outline-offset: 2px;
-}
-
-#issuesCard {
-  display: none;
-}
-
-#issuesCard.show {
-  display: block;
-}
-
-.nps {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-}
-
-.n {
-  font: inherit;
-  font-weight: 700;
-  background: #fff;
-  border: 1.5px solid var(--line);
-  border-radius: 10px;
-  min-height: 46px;
-  cursor: pointer;
-  color: var(--ink);
-  transition: .15s;
-}
-
-.n[aria-pressed="true"] {
-  border-width: 2px;
-  transform: scale(1.04);
-  box-shadow: 0 2px 8px rgba(0,0,0,.18);
-}
-
-.n[data-score="1"][aria-pressed="true"] {
-  background: #d3202f;
-  border-color: #d3202f;
-  color: #fff;
-}
-
-.n[data-score="2"][aria-pressed="true"] {
-  background: #f4857d;
-  border-color: #f4857d;
-  color: #5c0d0d;
-}
-
+.opt::before {content: "";flex: none;width: 18px;height: 18px;border-radius: 50%;border: 2px solid #b4c0cf;}
+.opt.multi::before {border-radius: 5px;}
+.opt[aria-pressed="true"] {background: var(--tint);border-color: var(--navy-2);color: var(--navy);}
+.opt[aria-pressed="true"]::before {background: var(--navy-2);border-color: var(--navy-2);box-shadow: inset 0 0 0 3px #fff;}
+.opt.multi[aria-pressed="true"]::before {box-shadow: none;background:var(--navy-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='m2.5 6.5 2.5 2.5 4.5-5.5'/%3E%3C/svg%3E")
+center/12px no-repeat;}
+.opt:focus-visible, .n:focus-visible, .btn:focus-visible { outline: 3px solid rgba(10,61,125,.4); outline-offset: 2px; }
+#issuesCard { display: none; }
+#issuesCard.show { display: block; }
+.nps {display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;}
+.n {font: inherit; font-weight: 700; background: #fff;border: 1.5px solid var(--line); border-radius: 10px; min-height: 46px; cursor: pointer; color: var(--ink); transition: .15s;}
+.n[aria-pressed="true"] {border-width: 2px;transform: scale(1.04); box-shadow: 0 2px 8px rgba(0,0,0,.18);}
+.n[data-score="1"][aria-pressed="true"] {background: #d3202f;border-color: #d3202f;color: #fff;}
+.n[data-score="2"][aria-pressed="true"] {background: #f4857d;border-color: #f4857d;color: #5c0d0d;}
 .n[data-score="3"][aria-pressed="true"] {
-  background: #ffb020;
-  border-color: #ffb020;
-  color: #4a3000;
+background: #ffb020;
+border-color: #ffb020;
+color: #4a3000;
 }
 
 .n[data-score="4"][aria-pressed="true"] {
-  background: #9bd8a6;
-  border-color: #9bd8a6;
-  color: #0d3d1b;
+background: #9bd8a6;
+border-color: #9bd8a6;
+color: #0d3d1b;
 }
 
 .n[data-score="5"][aria-pressed="true"] {
-  background: #1a9c48;
-  border-color: #1a9c48;
-  color: #fff;
+background: #1a9c48;
+border-color: #1a9c48;
+color: #fff;
 }
 
 .ends {
-  display: flex;
-  justify-content: space-between;
-  font-size: .78rem;
-  color: var(--muted);
-  margin-top: 8px;
+display: flex;
+justify-content: space-between;
+font-size: .78rem;
+color: var(--muted);
+margin-top: 8px;
 }
 
 .btn {
-  width: 100%;
-  font: inherit;
-  font-weight: 800;
-  font-size: 1rem;
-  border: 0;
-  border-radius: 14px;
-  min-height: 54px;
-  cursor: pointer;
-  background: var(--navy);
-  color: #fff;
-  transition: background .15s, transform .05s;
+width: 100%;
+font: inherit;
+font-weight: 800;
+font-size: 1rem;
+border: 0;
+border-radius: 14px;
+min-height: 54px;
+cursor: pointer;
+background: var(--navy);
+color: #fff;
+transition: background .15s, transform .05s;
 }
 
 .btn:hover {
-  background: var(--navy-2);
+background: var(--navy-2);
 }
 
 .btn:active {
-  transform: scale(.99);
+transform: scale(.99);
 }
 
 .btn[disabled] {
-  opacity: .6;
-  cursor: wait;
+opacity: .6;
+cursor: wait;
 }
 
 .btn.wa {
-  background: var(--wa);
-  color: #063b1a;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 12px;
+background: var(--wa);
+color: #063b1a;
+text-decoration: none;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 12px;
 }
 
 .note {
-  text-align: center;
-  font-size: .8rem;
-  color: var(--muted);
-  margin: 10px 0 0;
+text-align: center;
+font-size: .8rem;
+color: var(--muted);
+margin: 10px 0 0;
 }
 
 #done {
-  display: none;
-  text-align: center;
-  padding: 32px 20px;
+display: none;
+text-align: center;
+padding: 32px 20px;
 }
 
 #done.show {
-  display: block;
+display: block;
 }
 
 #done .tick {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--tint);
-  color: var(--navy);
-  display: grid;
-  place-items: center;
-  margin: 0 auto 12px;
-  font-size: 1.8rem;
-  font-weight: 800;
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: var(--tint);
+color: var(--navy);
+display: grid;
+place-items: center;
+margin: 0 auto 12px;
+font-size: 1.8rem;
+font-weight: 800;
 }
 
 #done h2 {
-  font-size: 1.25rem;
+font-size: 1.25rem;
 }
 
 #done p {
-  color: var(--muted);
-  margin: 6px 0 0;
+color: var(--muted);
+margin: 6px 0 0;
 }
 
 .hp {
-  position: absolute;
-  left: -9999px;
+position: absolute;
+left: -9999px;
 }
 
 @media (min-width: 600px) {
-  .hero {
-    padding: 44px 20px 80px;
-  }
+.hero {
+padding: 44px 20px 80px;
+}
 
-  .hero h1 {
-    font-size: 2rem;
-  }
+.hero h1 {
+font-size: 2rem;
+}
 
-  main {
-    margin-top: -52px;
-  }
+main {
+margin-top: -52px;
+}
 
-  .card {
-    padding: 24px;
-  }
+.card {
+padding: 24px;
+}
 
-  .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 14px;
-  }
+.row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0 14px;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
+* {
+transition: none !important;
+}
 }
 </style>
 </head>
@@ -284,14 +210,14 @@ e.preventDefault();e.stopPropagation();return false}});document.addEventListener
 ;document.documentElement.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;'+"font-family:'Segoe UI',Arial,sans-serif;text-align:center;padding:24px;background:#f4f7fb;color:#17365d;\">"+"<h2>Developer Tools are disabled on this page.<br>Please close DevTools and reload to continue.</h2></div>"}}setInterval(checkDevToolsOpen,1e3)})();
 </script>
 <header>
-  <img     src="https://lh3.googleusercontent.com/d/1EKwo21Xo5lofDDn1Dnllx6k8kfZbVWDb"     alt="Sai Swarna">
-<img  src="https://lh3.googleusercontent.com/d/1we99lgGaprFz6s65IYbkIHwaKqykg9KF"  alt="Hyundai">
+<img src="https://lh3.googleusercontent.com/d/1EKwo21Xo5lofDDn1Dnllx6k8kfZbVWDb" alt="Sai Swarna">
+<imgsrc="https://lh3.googleusercontent.com/d/1we99lgGaprFz6s65IYbkIHwaKqykg9KF"alt="Hyundai">
 </header>
 <section class="hero">
-  <h1>Your Experience with Sai <em>Swarna</em> Hyundai</h1>
-  <p>
-    Two minutes of your time helps us fix what's wrong and keep doing what works.
-  </p>
+<h1>Your Experience with Sai <em>Swarna</em> Hyundai</h1>
+<p>
+Two minutes of your time helps us fix what's wrong and keep doing what works.
+</p>
 </section>
 <main>
 <form id="frm" novalidate autocomplete="off">
@@ -304,85 +230,74 @@ e.preventDefault();e.stopPropagation();return false}});document.addEventListener
  autocomplete="off"
  aria-hidden="true">
 
-  <!-- VEHICLE -->
+<!-- VEHICLE -->
 
-  <section class="card">
+<section class="card">
 
 
 <h2>Your vehicle</h2>
 
 <p class="hint">
-  So we can find your job card and call you back.
+So we can find your job card and call you back.
 </p>
 
 <div class="row">
 
-  <div>
-    <label class="f" for="RegNo">Vehicle number</label>
+<div>
+<label class="f" for="RegNo">Vehicle number</label>
 
-    <input
-      id="RegNo"
-      name="RegNo"
-      type="text"
-      placeholder="AP39AB1234"
-      autocapitalize="characters"
-      autocomplete="off"
-      required>
+<input
+id="RegNo"
+name="RegNo"
+type="text"
+placeholder="AP39AB1234"
+autocapitalize="characters"
+autocomplete="off"
+required>
 
-    <div class="err" id="e-RegNo">
-      Enter your vehicle number.
-    </div>
-  </div>
+<div class="err" id="e-RegNo">
+Enter a valid vehicle number (e.g. AP39AB1234).
+</div>
+</div>
 
-  <div>
-    <label class="f" for="Mobile">Mobile number</label>
+<div>
+<label class="f" for="Mobile">Mobile number</label>
 
-    <input
-      id="Mobile"
-      name="Mobile"
-      type="tel"
-      inputmode="numeric"
-      placeholder="10-digit number"
-      autocomplete="tel-national"
-      required>
+<input
+id="Mobile"
+name="Mobile"
+type="tel"
+inputmode="numeric"
+placeholder="10-digit number"
+autocomplete="tel-national"
+required>
 
-    <div class="err" id="e-Mobile">
-      Enter a 10-digit mobile number.
-    </div>
-  </div>
+<div class="err" id="e-Mobile">
+Enter a valid 10-digit mobile number.
+</div>
+</div>
+<div><label class="f" for="Model">Vehicle model</label>
+<select id="Model" name="Model" required><option value="">Select Model</option><option value="Grand i 10 NIOS">Grand i 10 NIOS</option><option value="i20">i20</option><option value="i20 N Line">i20 N Line</option><option value="Aura">Aura</option><option value="Verna">Verna</option><option value="EXTER">EXTER</option><option value="Venue">Venue</option><option value="Venue N Line">Venue N Line</option><option value="Creta">Creta</option><option value="Creta N Line">Creta N Line</option><option value="Alcazar">Alcazar</option><option value="Creta - Electric">Creta - Electric</option><option value="IONIQ 5">IONIQ 5</option></select>
+<div class="err" id="e-Model">Enter your vehicle model.</div></div>
 
-  <div>
-    <label class="f" for="Model">Vehicle model</label>
 
-    <input
-      id="Model"
-      name="Model"
-      type="text"
-      placeholder="e.g. Creta, i20, Venue"
-      required>
+<div>
+<label class="f" for="Service">Visit type</label>
 
-    <div class="err" id="e-Model">
-      Enter your vehicle model.
-    </div>
-  </div>
-
-  <div>
-    <label class="f" for="Service">Visit type</label>
-
-    <select id="Service" name="Service">
-      <option value="Service Related">Service Related</option>
-      <option value="Bodyworks Related">Bodyworks Related</option>
-    </select>
-  </div>
+<select id="Service" name="Service">
+<option value="Service Related">Service Related</option>
+<option value="Bodyworks Related">Bodyworks Related</option>
+</select>
+</div>
 
 </div>
 
 
-  </section>
+</section>
 
-  <!-- EXPERIENCE -->
+<!-- EXPERIENCE -->
 
-  <section class="card">
+<section class="card">
 
 
 <h2>How was your experience?</h2>
@@ -390,179 +305,183 @@ e.preventDefault();e.stopPropagation();return false}});document.addEventListener
 <p class="hint">Choose one.</p>
 
 <div
-  class="opts"
-  id="exp"
-  role="group"
-  aria-label="Experience">
+class="opts"
+id="exp"
+role="group"
+aria-label="Experience">
 
-  <button type="button"
-          class="opt"
-          aria-pressed="false"
-          data-value="Excellent">
-    Excellent
-  </button>
+<button type="button"
+class="opt"
+aria-pressed="false"
+data-value="Excellent">
+Excellent
+</button>
 
-  <button type="button"
-          class="opt"
-          aria-pressed="false"
-          data-value="Good">
-    Good
-  </button>
+<button type="button"
+class="opt"
+aria-pressed="false"
+data-value="Good">
+Good
+</button>
 
-  <button type="button"
-          class="opt"
-          aria-pressed="false"
-          data-value="Fair">
-    Fair
-  </button>
+<button type="button"
+class="opt"
+aria-pressed="false"
+data-value="Fair">
+Fair
+</button>
 
-  <button type="button"
-          class="opt"
-          aria-pressed="false"
-          data-value="Poor">
-    Poor
-  </button>
+<button type="button"
+class="opt"
+aria-pressed="false"
+data-value="Poor">
+Poor
+</button>
 
-  <button type="button"
-          class="opt"
-          aria-pressed="false"
-          data-value="Unacceptable">
-    Unacceptable
-  </button>
+<button type="button"
+class="opt"
+aria-pressed="false"
+data-value="Unacceptable">
+Unacceptable
+</button>
 
 </div>
 
 <div class="err" id="e-exp">
-  Choose how your experience was.
+Choose how your experience was.
 </div>
 
 
-  </section>
+</section>
 
-  <!-- ISSUES -->
+<!-- ISSUES -->
 
-  <section class="card" id="issuesCard">
+<section class="card" id="issuesCard">
 
 
 <h2>What could have been better?</h2>
 
 <p class="hint">
-  Select all that apply.
+Select all that apply.
 </p>
 
+<div class="err" id="e-issues">
+Please select at least one option.
+</div>
+
 <div
-  class="opts"
-  id="issues"
-  role="group"
-  aria-label="Issues">
+class="opts"
+id="issues"
+role="group"
+aria-label="Issues">
 
-  <button type="button"
-          class="opt multi"
-          aria-pressed="false"
-          data-value="Transparency & Fairness of Charges">
-    Transparency &amp; fairness of charges
-  </button>
+<button type="button"
+class="opt multi"
+aria-pressed="false"
+data-value="Transparency & Fairness of Charges">
+Transparency &amp; fairness of charges
+</button>
 
-  <button type="button"
-          class="opt multi"
-          aria-pressed="false"
-          data-value="Updates on Vehicle Status">
-    Updates on vehicle status
-  </button>
+<button type="button"
+class="opt multi"
+aria-pressed="false"
+data-value="Updates on Vehicle Status">
+Updates on vehicle status
+</button>
 
-  <button type="button"
-          class="opt multi"
-          aria-pressed="false"
-          data-value="Time taken for service">
-    Time taken for service
-  </button>
+<button type="button"
+class="opt multi"
+aria-pressed="false"
+data-value="Time taken for service">
+Time taken for service
+</button>
 
-  <button type="button"
-          class="opt multi"
-          aria-pressed="false"
-          data-value="Experience with Service Advisor">
-    Experience with service advisor
-  </button>
+<button type="button"
+class="opt multi"
+aria-pressed="false"
+data-value="Experience with Service Advisor">
+Experience with service advisor
+</button>
 
-  <button type="button"
-          class="opt multi"
-          aria-pressed="false"
-          data-value="Quality of work done">
-    Quality of work done
-  </button>
+<button type="button"
+class="opt multi"
+aria-pressed="false"
+data-value="Quality of work done">
+Quality of work done
+</button>
 
-  <button type="button"
-          class="opt multi"
-          aria-pressed="false"
-          data-value="Cleanliness of Vehicle">
-    Cleanliness of vehicle
-  </button>
+<button type="button"
+class="opt multi"
+aria-pressed="false"
+data-value="Cleanliness of Vehicle">
+Cleanliness of vehicle
+</button>
 
-  <button type="button"
-          class="opt multi"
-          aria-pressed="false"
-          data-value="Others">
-    Others
-  </button>
+<button type="button"
+class="opt multi"
+aria-pressed="false"
+data-value="Others">
+Others
+</button>
 
 </div>
 
 
-  </section>
+</section>
 
-  <!-- RATING -->
+<!-- RATING -->
 
-  <section class="card">
+<section class="card">
 
 
 <h2>How likely are you to recommend us?</h2>
 
 <p class="hint">
-  1 means not at all likely, 5 means extremely likely.
+1 means not at all likely, 5 means extremely likely.
 </p>
 
 <div
-  class="nps"
-  id="npsGrid"
-  role="group"
-  aria-label="Recommendation score">
+class="nps"
+id="npsGrid"
+role="group"
+aria-label="Recommendation score">
 </div>
 
 <div class="ends">
-  <span>Not likely</span>
-  <span>Very likely</span>
+<span>Not likely</span>
+<span>Very likely</span>
 </div>
 
 <div class="err" id="e-nps">
-  Pick a rating from 1 to 5.
+Pick a rating from 1 to 5.
 </div>
 
 
-  </section>
+</section>
 
-  <!-- COMMENTS -->
+<!-- COMMENTS -->
 
-  <section class="card">
+<section class="card">
 
 
 <h2>Anything else you'd like to tell us?</h2>
 
 <label
-  class="f"
-  for="commentBox"
-  style="position:absolute;left:-9999px">
-  Comments
+class="f"
+for="commentBox"
+style="position:absolute;left:-9999px">
+Comments
 </label>
 
 <textarea
-  id="commentBox"
-  name="Comments"
-  placeholder="Your comments (optional)"></textarea>
+id="commentBox"
+name="Comments"
+placeholder="Your comments (optional)"></textarea>
 
 
-  </section>
+</section>
 
-  <!-- SUBMIT -->
+<!-- SUBMIT -->
 
 <button
  class="btn"
@@ -570,9 +489,9 @@ e.preventDefault();e.stopPropagation();return false}});document.addEventListener
  type="submit">
 Send feedback </button>
 
-  <p class="note">
-    Your feedback is saved and also opens in WhatsApp so our team can reply quickly.
-  </p>
+<p class="note">
+Your feedback is saved and also opens in WhatsApp so our team can reply quickly.
+</p>
 
 </form>
 
@@ -580,18 +499,18 @@ Send feedback </button>
 
 <section class="card" id="done" aria-live="polite">
 
-  <div class="tick">&#10003;</div>
+<div class="tick">&#10003;</div>
 
-  <h2>Thank you for your feedback</h2>
+<h2>Thank you for your feedback</h2>
 
-  <p>
-    Our team will get back to you soon.
-  </p>
+<p>
+Our team will get back to you soon.
+</p>
 
-  <p
-    id="saveStatus"
-    style="font-size:.85rem">
-  </p>
+<p
+id="saveStatus"
+style="font-size:.85rem">
+</p>
 
 <a
  class="btn wa"
@@ -615,33 +534,33 @@ Submit another response </button>
 <!-- Hidden iframe fallback -->
 
 <iframe
-  name="sink"
-  id="sink"
-  title=""
-  style="display:none">
+name="sink"
+id="sink"
+title=""
+style="display:none">
 </iframe>
 
 <form
-  id="sheetForm"
-  method="POST"
-  target="sink"
-  style="display:none">
+id="sheetForm"
+method="POST"
+target="sink"
+style="display:none">
 </form>
 
 <script>
 
 /* =========================================================
-   CONFIGURATION
+ CONFIGURATION
 ========================================================= */
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzhhfjoi8Z8IkVTT1A4n5l0sH7blyGkcMF7yYoVtavkokxlBK0Pq_gQaEMUcg4W5hLOjw/exec";
+"https://script.google.com/macros/s/AKfycbzhhfjoi8Z8IkVTT1A4n5l0sH7blyGkcMF7yYoVtavkokxlBK0Pq_gQaEMUcg4W5hLOjw/exec";
 
 const WHATSAPP_TO = "918247664683";
 
 
 /* =========================================================
-   STATE
+ STATE
 ========================================================= */
 
 let experience = "";
@@ -651,644 +570,685 @@ let issues = [];
 const $ = id => document.getElementById(id);
 
 const NEGATIVE = [
-  "Good",
-  "Fair",
-  "Poor",
-  "Unacceptable"
+"Good",
+"Fair",
+"Poor",
+"Unacceptable"
 ];
 
 
 /* =========================================================
-   NPS BUTTONS
+ NPS BUTTONS
 ========================================================= */
 
 for (let i = 1; i <= 5; i++) {
 
-  const button = document.createElement("button");
+const button = document.createElement("button");
 
-  button.type = "button";
-  button.className = "n";
-  button.textContent = i;
-  button.dataset.score = i;
-  button.setAttribute("aria-pressed", "false");
+button.type = "button";
+button.className = "n";
+button.textContent = i;
+button.dataset.score = i;
+button.setAttribute("aria-pressed", "false");
 
-  button.addEventListener("click", () => {
+button.addEventListener("click", () => {
 
-    nps = String(i);
+nps = String(i);
 
-    document
-      .querySelectorAll("#npsGrid .n")
-      .forEach(btn => {
-        btn.setAttribute(
-          "aria-pressed",
-          btn === button ? "true" : "false"
-        );
-      });
+document
+.querySelectorAll("#npsGrid .n")
+.forEach(btn => {
+btn.setAttribute(
+"aria-pressed",
+btn === button ? "true" : "false"
+);
+});
 
-    $("e-nps").classList.remove("show");
-  });
+$("e-nps").classList.remove("show");
+});
 
-  $("npsGrid").appendChild(button);
+$("npsGrid").appendChild(button);
 }
 
 
 /* =========================================================
-   EXPERIENCE SELECTION
+ EXPERIENCE SELECTION
 ========================================================= */
 
 $("exp").addEventListener("click", event => {
 
-  const button = event.target.closest(".opt");
+const button = event.target.closest(".opt");
 
-  if (!button) return;
+if (!button) return;
 
-  experience = button.dataset.value;
+experience = button.dataset.value;
 
-  document
-    .querySelectorAll("#exp .opt")
-    .forEach(btn => {
-      btn.setAttribute(
-        "aria-pressed",
-        btn === button ? "true" : "false"
-      );
-    });
+document
+.querySelectorAll("#exp .opt")
+.forEach(btn => {
+btn.setAttribute(
+"aria-pressed",
+btn === button ? "true" : "false"
+);
+});
 
-  const showIssues = NEGATIVE.includes(experience);
+const showIssues = NEGATIVE.includes(experience);
 
-  $("issuesCard").classList.toggle(
-    "show",
-    showIssues
-  );
+$("issuesCard").classList.toggle(
+"show",
+showIssues
+);
 
-  if (!showIssues) {
+if (!showIssues) {
 
-    issues = [];
+issues = [];
 
-    document
-      .querySelectorAll("#issues .opt")
-      .forEach(btn => {
-        btn.setAttribute("aria-pressed", "false");
-      });
-  }
+$("e-issues").classList.remove("show");
 
-  $("e-exp").classList.remove("show");
+document
+.querySelectorAll("#issues .opt")
+.forEach(btn => {
+btn.setAttribute("aria-pressed", "false");
+});
+}
+
+$("e-exp").classList.remove("show");
 });
 
 
 /* =========================================================
-   ISSUES MULTI-SELECTION
+ ISSUES MULTI-SELECTION
 ========================================================= */
 
 $("issues").addEventListener("click", event => {
 
-  const button = event.target.closest(".opt");
+const button = event.target.closest(".opt");
 
-  if (!button) return;
+if (!button) return;
 
-  const value = button.dataset.value;
+const value = button.dataset.value;
 
-  const selected = !issues.includes(value);
+const selected = !issues.includes(value);
 
-  if (selected) {
-    issues.push(value);
-  } else {
-    issues = issues.filter(item => item !== value);
-  }
+if (selected) {
+issues.push(value);
+} else {
+issues = issues.filter(item => item !== value);
+}
 
-  button.setAttribute(
-    "aria-pressed",
-    selected ? "true" : "false"
-  );
+button.setAttribute(
+"aria-pressed",
+selected ? "true" : "false"
+);
+
+if (issues.length > 0) {
+$("e-issues").classList.remove("show");
+}
 });
 
 
 /* =========================================================
-   INPUT FORMATTING
+ INPUT FORMATTING
 ========================================================= */
 
 $("Mobile").addEventListener("input", event => {
 
-  event.target.value =
-    event.target.value
-      .replace(/\D/g, "")
-      .slice(0, 10);
+event.target.value =
+event.target.value
+.replace(/\D/g, "")
+.slice(0, 10);
 });
 
 
 $("RegNo").addEventListener("input", event => {
 
-  event.target.value =
-    event.target.value
-      .toUpperCase()
-      .replace(/[^A-Z0-9 -]/g, "");
+event.target.value =
+event.target.value
+.toUpperCase()
+.replace(/[^A-Z0-9 -]/g, "");
 });
 
 
 /* =========================================================
-   VALIDATION
+ VALIDATION
 ========================================================= */
 
 function check(id, valid) {
 
-  $(id).classList.toggle(
-    "invalid",
-    !valid
-  );
+$(id).classList.toggle(
+"invalid",
+!valid
+);
 
-  $("e-" + id).classList.toggle(
-    "show",
-    !valid
-  );
+$("e-" + id).classList.toggle(
+"show",
+!valid
+);
 
-  return valid;
+return valid;
 }
 
 
 function validate() {
 
-  const vehicleOK =
-    check(
-      "RegNo",
-      $("RegNo").value.trim().length >= 4
-    );
+const regValue =
+$("RegNo").value
+.toUpperCase()
+.replace(/[\s-]/g, "");
 
-  const mobileOK =
-    check(
-      "Mobile",
-      /^\d{10}$/.test(
-        $("Mobile").value.trim()
-      )
-    );
+/* Standard (AP39AB1234) or Bharat series (22BH1234AA) */
+const vehicleOK =
+check(
+"RegNo",
+/^[A-Z]{2}\d{1,2}[A-Z]{0,3}\d{4}$/.test(regValue) ||
+/^\d{2}BH\d{4}[A-Z]{1,2}$/.test(regValue)
+);
 
-  const modelOK =
-    check(
-      "Model",
-      $("Model").value.trim().length > 0
-    );
+const mobileValue =
+$("Mobile").value.trim();
 
-  const experienceOK =
-    Boolean(experience);
+let mobileMsg =
+"Enter a valid 10-digit mobile number.";
 
-  $("e-exp").classList.toggle(
-    "show",
-    !experienceOK
-  );
+let mobileValid = true;
 
-  const ratingOK =
-    nps !== "";
+if (!/^\d{10}$/.test(mobileValue)) {
+mobileValid = false;
+mobileMsg = "Enter a 10-digit mobile number.";
+} else if (Number(mobileValue[0]) < 6) {
+mobileValid = false;
+mobileMsg = "Mobile number must start with 6, 7, 8 or 9.";
+} else if (/^(\d)\1{9}$/.test(mobileValue)) {
+mobileValid = false;
+mobileMsg = "Mobile number cannot have all digits the same.";
+}
 
-  $("e-nps").classList.toggle(
-    "show",
-    !ratingOK
-  );
+$("e-Mobile").textContent = mobileMsg;
 
-  const valid =
-    vehicleOK &&
-    mobileOK &&
-    modelOK &&
-    experienceOK &&
-    ratingOK;
+const mobileOK =
+check("Mobile", mobileValid);
 
-  if (!valid) {
+const modelOK =
+check(
+"Model",
+$("Model").value.trim().length > 0
+);
 
-    const firstError =
-      document.querySelector(
-        ".invalid, .err.show"
-      );
+const experienceOK =
+Boolean(experience);
 
-    if (firstError) {
+$("e-exp").classList.toggle(
+"show",
+!experienceOK
+);
 
-      firstError.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-    }
-  }
+const issuesVisible =
+$("issuesCard").classList.contains("show");
 
-  return valid;
+const issuesOK =
+!issuesVisible || issues.length > 0;
+
+$("e-issues").classList.toggle(
+"show",
+!issuesOK
+);
+
+const ratingOK =
+nps !== "";
+
+$("e-nps").classList.toggle(
+"show",
+!ratingOK
+);
+
+const valid =
+vehicleOK &&
+mobileOK &&
+modelOK &&
+experienceOK &&
+issuesOK &&
+ratingOK;
+
+if (!valid) {
+
+const firstError =
+document.querySelector(
+".invalid, .err.show"
+);
+
+if (firstError) {
+
+firstError.scrollIntoView({
+behavior: "smooth",
+block: "center"
+});
+}
+}
+
+return valid;
 }
 
 
 /* =========================================================
-   LIVE VALIDATION
+ LIVE VALIDATION
 ========================================================= */
 
 ["RegNo", "Mobile", "Model"].forEach(id => {
 
-  $(id).addEventListener("input", () => {
+$(id).addEventListener("input", () => {
 
-    if ($(id).classList.contains("invalid")) {
-      validate();
-    }
+if ($(id).classList.contains("invalid")) {
+validate();
+}
 
-  });
+});
 
 });
 
 
 /* =========================================================
-   WHATSAPP MESSAGE
+ WHATSAPP MESSAGE
 ========================================================= */
 
 function buildWhatsAppUrl(data) {
 
-  let message =
-    "*Hi! 👋*\n\n" +
+let message =
+"*Hi! 👋*\n\n" +
 
-    "Here's my feedback for *Sai Swarna Hyundai* 🚗\n\n" +
+"Here's my feedback for *Sai Swarna Hyundai* 🚗\n\n" +
 
-    "*Vehicle No:* " +
-    data.RegNo +
-    "\n" +
+"*Vehicle No:* " +
+data.RegNo +
+"\n" +
 
-    "*Mobile:* " +
-    data.Mobile +
-    "\n" +
+"*Mobile:* " +
+data.Mobile +
+"\n" +
 
-    "*Model:* " +
-    data.Model +
-    "\n" +
+"*Model:* " +
+data.Model +
+"\n" +
 
-    "*Visit type:* " +
-    data.Service +
-    "\n" +
+"*Visit type:* " +
+data.Service +
+"\n" +
 
-    "*Experience:* " +
-    data.Experience +
-    "\n";
+"*Experience:* " +
+data.Experience +
+"\n";
 
-  if (data.Issues) {
+if (data.Issues) {
 
-    message +=
-      "\n*Issues:*\n" +
-      data.Issues
-        .split(", ")
-        .map(item => "- " + item)
-        .join("\n") +
-      "\n";
-  }
+message +=
+"\n*Issues:*\n" +
+data.Issues
+.split(", ")
+.map(item => "- " + item)
+.join("\n") +
+"\n";
+}
 
-  message +=
-    "\n*Rating (1-5):* " +
-    data.NPS +
-    "\n\n" +
+message +=
+"\n*Rating (1-5):* " +
+data.NPS +
+"\n\n" +
 
-    "💬 *Comments:* " +
-    (data.Comments || "Nothing");
+"💬 *Comments:* " +
+(data.Comments || "Nothing");
 
-  return (
-    "https://wa.me/" +
-    WHATSAPP_TO +
-    "?text=" +
-    encodeURIComponent(message)
-  );
+return (
+"https://wa.me/" +
+WHATSAPP_TO +
+"?text=" +
+encodeURIComponent(message)
+);
 }
 
 
 /* =========================================================
-   SAVE TO GOOGLE SHEETS
+ SAVE TO GOOGLE SHEETS
 ========================================================= */
 
 async function saveToSheet(data) {
 
-  try {
+try {
 
-    const response = await fetch(
-      SCRIPT_URL,
-      {
-        method: "POST",
-        body: new URLSearchParams(data)
-      }
-    );
+const response = await fetch(
+SCRIPT_URL,
+{
+method: "POST",
+body: new URLSearchParams(data)
+}
+);
 
-    const text = await response.text();
+const text = await response.text();
 
-    let result = null;
+let result = null;
 
-    try {
-      result = JSON.parse(text);
-    } catch (error) {
-      result = null;
-    }
+try {
+result = JSON.parse(text);
+} catch (error) {
+result = null;
+}
 
-    if (result && result.ok) {
+if (result && result.ok) {
 
-      return {
-        ok: true
-      };
-    }
+return {
+ok: true
+};
+}
 
-    console.error(
-      "Google Sheet response:",
-      response.status,
-      text
-    );
+console.error(
+"Google Sheet response:",
+response.status,
+text
+);
 
-    return {
-      ok: false,
-      error:
-        result && result.error
-          ? result.error
-          : response.status +
-            " - unexpected response"
-    };
+return {
+ok: false,
+error:
+result && result.error
+? result.error
+: response.status +
+" - unexpected response"
+};
 
-  } catch (error) {
+} catch (error) {
 
-    console.error(
-      "Google Sheet save failed:",
-      error
-    );
+console.error(
+"Google Sheet save failed:",
+error
+);
 
-    await postViaIframe(data);
+await postViaIframe(data);
 
-    return {
-      ok: false,
-      error:
-        "Network/CORS issue. Backup request sent."
-    };
-  }
+return {
+ok: false,
+error:
+"Network/CORS issue. Backup request sent."
+};
+}
 }
 
 
 /* =========================================================
-   IFRAME BACKUP POST
+ IFRAME BACKUP POST
 ========================================================= */
 
 function postViaIframe(data) {
 
-  return new Promise(resolve => {
+return new Promise(resolve => {
 
-    const form = $("sheetForm");
-    const iframe = $("sink");
+const form = $("sheetForm");
+const iframe = $("sink");
 
-    form.innerHTML = "";
-    form.action = SCRIPT_URL;
+form.innerHTML = "";
+form.action = SCRIPT_URL;
 
-    Object.entries(data).forEach(
-      ([key, value]) => {
+Object.entries(data).forEach(
+([key, value]) => {
 
-        const input =
-          document.createElement("input");
+const input =
+document.createElement("input");
 
-        input.type = "hidden";
-        input.name = key;
-        input.value = value;
+input.type = "hidden";
+input.name = key;
+input.value = value;
 
-        form.appendChild(input);
-      }
-    );
+form.appendChild(input);
+}
+);
 
-    let completed = false;
+let completed = false;
 
-    const finish = () => {
+const finish = () => {
 
-      if (completed) return;
+if (completed) return;
 
-      completed = true;
-      resolve();
-    };
+completed = true;
+resolve();
+};
 
-    iframe.onload = finish;
+iframe.onload = finish;
 
-    setTimeout(
-      finish,
-      6000
-    );
+setTimeout(
+finish,
+6000
+);
 
-    form.submit();
-  });
+form.submit();
+});
 }
 
 
 /* =========================================================
-   FORM SUBMIT
+ FORM SUBMIT
 ========================================================= */
 
 $("frm").addEventListener(
-  "submit",
-  async event => {
+"submit",
+async event => {
 
-    event.preventDefault();
+event.preventDefault();
 
-    /* Honeypot protection */
-    if ($("Website").value) {
-      return;
-    }
+/* Honeypot protection */
+if ($("Website").value) {
+return;
+}
 
-    /* Validate */
-    if (!validate()) {
-      return;
-    }
+/* Validate */
+if (!validate()) {
+return;
+}
 
-    const data = {
+const data = {
 
-      RegNo:
-        $("RegNo")
-          .value
-          .trim()
-          .toUpperCase(),
+RegNo:
+$("RegNo")
+.value
+.trim()
+.toUpperCase(),
 
-      Mobile:
-        $("Mobile")
-          .value
-          .trim(),
+Mobile:
+$("Mobile")
+.value
+.trim(),
 
-      Model:
-        $("Model")
-          .value
-          .trim(),
+Model:
+$("Model")
+.value
+.trim(),
 
-      Service:
-        $("Service")
-          .value,
+Service:
+$("Service")
+.value,
 
-      Experience:
-        experience,
+Experience:
+experience,
 
-      Issues:
-        issues.join(", "),
+Issues:
+issues.join(", "),
 
-      NPS:
-        nps,
+NPS:
+nps,
 
-      Comments:
-        $("commentBox")
-          .value
-          .trim()
-    };
-
-
-    /* Build WhatsApp URL */
-    const whatsappURL =
-      buildWhatsAppUrl(data);
+Comments:
+$("commentBox")
+.value
+.trim()
+};
 
 
-    /* Disable button */
-    const submitButton =
-      $("submitBtn");
-
-    submitButton.disabled = true;
-    submitButton.textContent =
-      "Sending...";
+/* Build WhatsApp URL */
+const whatsappURL =
+buildWhatsAppUrl(data);
 
 
-    /* Open WhatsApp once */
-    let whatsappWindow = null;
+/* Disable button */
+const submitButton =
+$("submitBtn");
 
-    try {
-
-      whatsappWindow =
-        window.open(
-          whatsappURL,
-          "_blank"
-        );
-
-    } catch (error) {
-
-      console.error(
-        "WhatsApp opening failed:",
-        error
-      );
-    }
+submitButton.disabled = true;
+submitButton.textContent =
+"Sending...";
 
 
-    /* Save to Google Sheet */
-    const result =
-      await saveToSheet(data);
+/* Open WhatsApp once */
+let whatsappWindow = null;
+
+try {
+
+whatsappWindow =
+window.open(
+whatsappURL,
+"_blank"
+);
+
+} catch (error) {
+
+console.error(
+"WhatsApp opening failed:",
+error
+);
+}
 
 
-    /* Status */
-    const status =
-      $("saveStatus");
-
-    if (result.ok) {
-
-      status.style.color =
-        "#1a7f37";
-
-      status.textContent =
-        "Saved to our records.";
-
-    } else {
-
-      status.style.color =
-        "#d3202f";
-
-      status.textContent =
-        "We couldn't confirm the Google Sheet save. " +
-        "Please send the WhatsApp message.";
-    }
+/* Save to Google Sheet */
+const result =
+await saveToSheet(data);
 
 
-    /* WhatsApp fallback button */
-    $("waLink").href =
-      whatsappURL;
+/* Status */
+const status =
+$("saveStatus");
 
-    $("waLink").style.display =
-      whatsappWindow
-        ? "none"
-        : "flex";
+if (result.ok) {
 
+status.style.color =
+"#1a7f37";
 
-    /* Show success */
-    $("frm").style.display =
-      "none";
+status.textContent =
+"Saved to our records.";
 
-    $("done").classList.add(
-      "show"
-    );
+} else {
 
+status.style.color =
+"#d3202f";
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+status.textContent =
+"We couldn't confirm the Google Sheet save. " +
+"Please send the WhatsApp message.";
+}
 
 
-    /* Restore button */
-    submitButton.disabled = false;
+/* WhatsApp fallback button */
+$("waLink").href =
+whatsappURL;
 
-    submitButton.textContent =
-      "Send feedback";
+$("waLink").style.display =
+whatsappWindow
+? "none"
+: "flex";
 
-  }
+
+/* Show success */
+$("frm").style.display =
+"none";
+
+$("done").classList.add(
+"show"
+);
+
+
+window.scrollTo({
+top: 0,
+behavior: "smooth"
+});
+
+
+/* Restore button */
+submitButton.disabled = false;
+
+submitButton.textContent =
+"Send feedback";
+
+}
 );
 
 
 /* =========================================================
-   SUBMIT ANOTHER RESPONSE
+ SUBMIT ANOTHER RESPONSE
 ========================================================= */
 
 $("againBtn").addEventListener(
-  "click",
-  () => {
+"click",
+() => {
 
-    $("frm").reset();
+$("frm").reset();
 
-    experience = "";
-    nps = "";
-    issues = [];
+experience = "";
+nps = "";
+issues = [];
 
-    document
-      .querySelectorAll(".opt, .n")
-      .forEach(button => {
+document
+.querySelectorAll(".opt, .n")
+.forEach(button => {
 
-        button.setAttribute(
-          "aria-pressed",
-          "false"
-        );
-      });
-
-
-    $("issuesCard")
-      .classList
-      .remove("show");
+button.setAttribute(
+"aria-pressed",
+"false"
+);
+});
 
 
-    document
-      .querySelectorAll(".invalid")
-      .forEach(input => {
-
-        input.classList.remove(
-          "invalid"
-        );
-      });
+$("issuesCard")
+.classList
+.remove("show");
 
 
-    document
-      .querySelectorAll(".err.show")
-      .forEach(error => {
+document
+.querySelectorAll(".invalid")
+.forEach(input => {
 
-        error.classList.remove(
-          "show"
-        );
-      });
-
-
-    $("done")
-      .classList
-      .remove("show");
+input.classList.remove(
+"invalid"
+);
+});
 
 
-    $("frm").style.display =
-      "";
+document
+.querySelectorAll(".err.show")
+.forEach(error => {
+
+error.classList.remove(
+"show"
+);
+});
 
 
-    $("saveStatus").textContent =
-      "";
+$("done")
+.classList
+.remove("show");
 
 
-    $("waLink").style.display =
-      "flex";
+$("frm").style.display =
+"";
 
 
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+$("saveStatus").textContent =
+"";
 
-  }
+
+$("waLink").style.display =
+"flex";
+
+
+window.scrollTo({
+top: 0,
+behavior: "smooth"
+});
+
+}
 );
 
 </script>
